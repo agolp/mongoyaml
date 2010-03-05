@@ -1,0 +1,31 @@
+# By convention, the first key below is the collection name
+# This file creates two collections users and posts
+users:
+  j.doe:
+    _id: j.doe
+    firstname: John
+    lastname: Doe
+  mickey:
+    _id: mickey
+    firstname: Mickey
+    lastname: Mouse
+
+# You can use PHP to generate dynamic fixtures,
+# don't forget to print a "\n" if you use PHP at the very end of a line
+posts:
+<?php for($p = 1; $p <= 15; ++$p): ?>
+  Post<?php echo $p ?>:
+    author: j.doe
+    title:  "Title for post number <?php echo $p ?>"
+    content: >
+      This is great content for 
+      post number <?php echo $p, "\n" ?>
+    timestamp: <?php MongoYaml::Date() ?>
+    comments:
+<?php for($c = 1; $c <= 3; ++$c): ?>
+      -
+        _id:     <?php MongoYaml::Id() ?>
+        author:  mickey
+        content: "Comment <?php echo $c ?> for post <?php echo $p ?>"
+<?php endfor ?>
+<?php endfor ?>
