@@ -60,7 +60,8 @@ class MongoYaml
         $values = sfYaml::load($path);
         foreach($values as $collection => $array)
         {
-            foreach($array as $data) {
+            foreach($array as $data)
+            {
                 $this->database->$collection->save($data);
             }
         }
