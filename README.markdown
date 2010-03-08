@@ -74,7 +74,7 @@ Use cases
 License
 -------
 
-The program is provided under an MIT open source license. Read the [http://github.com/Armand/mongoyaml/blob/master/LICENSE](LICENSE) file for details.
+The program is provided under an MIT open source license. Read the [LICENSE](http://github.com/Armand/mongoyaml/blob/master/LICENSE) file for details.
 
 Credits
 -------
